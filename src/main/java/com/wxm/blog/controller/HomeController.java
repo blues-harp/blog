@@ -41,6 +41,8 @@ public class HomeController {
 
             jsonObject.put("remoteHost", request.getRemoteHost());
 
+            jsonObject.put("X-FORWARDED-FOR", request.getHeader("X-FORWARDED-FOR"));
+
             return jsonObject.toJSONString();
 
         } catch (Exception e) {
